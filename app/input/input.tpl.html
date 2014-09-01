@@ -1,8 +1,9 @@
 <h1> Crear un Ticket</h1> 
 
 
- 
-    Nombre: <input type="text" ng-model="nombre" /><br />
+  <form name="ticketsForm">
+    <fieldset>
+    Nombre: <input name="nombre" id="nombre" type="text" data-ng-model="ticket.nombre" /><br />
     Apellido: <input type="text" ng-model="apellido" /><br />
     E-mail: <input type="email" ng-model="email" /><br />
     Celular: <input type="email" ng-model="celular" /><br />
@@ -20,3 +21,17 @@
     <select ng-if="seleccionAsuntos.name=='Problema'" ng-model="seleccionProblema" ng-options="problema as problema.name for problema in problemas">
     	<option value="">---seleccionar---</option>
     </select><br>
+
+    </br>
+    <span ng-if="seleccionAsuntos.name=='Problema'">Problema:</span></br>
+    <span ng-if="seleccionAsuntos.name=='Queja'">Queja:</span></br>
+    <span ng-if="seleccionAsuntos.name=='Sugerencia'">Sugerencia:</span></br>
+      
+
+    <textarea ng-if="seleccionAsuntos.name=='Problema' || seleccionAsuntos.name=='Queja' || seleccionAsuntos.name=='Sugerencia'" rows="4" cols="50">{{seleccionAsuntos.name}}</textarea>
+
+    
+    <button data-ng-click="saveTickets()" ng-if="seleccionAsuntos.name=='Problema' || seleccionAsuntos.name=='Queja' || seleccionAsuntos.name=='Sugerencia'">Create</button>
+   </fieldset>
+   </form>
+    
