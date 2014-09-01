@@ -7,7 +7,14 @@
 
 
 	<body>
- 
+      <div ui-view="main" id="main">
+	      <div id="menu-view" ui-view="menu">
+	      </div>
+	      <div ui-view id="content-body">
+	        <div ui-view="input"></div>
+	        <div ui-view="upgrade"></div>
+	      </div>
+      </div>
 
 
 
@@ -15,7 +22,7 @@
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-	
+	<script src="common/app.js"></script>
 
 	</body>
 
