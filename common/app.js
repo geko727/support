@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', [
+  'myApp.controllers',
   'ui.router',
 ]);
 
@@ -10,7 +11,7 @@ myApp.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $
   .state('input', {
     url: '/input',
     templateUrl : 'app/input/input.tpl.html',
-    
+    controller: 'InputController'
    
   })
   .state('upgrade', {

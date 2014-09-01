@@ -1,1 +1,22 @@
-<h1> Index </h1> 
+<h1> Crear un Ticket</h1> 
+
+
+ 
+    Nombre: <input type="text" ng-model="nombre" /><br />
+    Apellido: <input type="text" ng-model="apellido" /><br />
+    E-mail: <input type="email" ng-model="email" /><br />
+    Celular: <input type="email" ng-model="celular" /><br />
+    Asunto: </br>
+    <select ng-model="seleccionAsuntos" ng-options="asunto as asunto.name for asunto in asuntos">
+    	<option value="">---seleccionar---</option>
+    </select><br>
+    
+    <p ng-if="seleccionAsuntos.name=='Problema' || seleccionAsuntos.name=='Queja'">Servicio:</p>
+    <select ng-if="seleccionAsuntos.name=='Problema' || seleccionAsuntos.name=='Queja'" ng-model="seleccionServicio" ng-options="servicio as servicio.name for servicio in servicios">
+    	<option value="">---seleccionar---</option>
+    </select><br>
+    
+    <p ng-if="seleccionAsuntos.name=='Problema'">Problema:</p>
+    <select ng-if="seleccionAsuntos.name=='Problema'" ng-model="seleccionProblema" ng-options="problema as problema.name for problema in problemas">
+    	<option value="">---seleccionar---</option>
+    </select><br>
