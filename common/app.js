@@ -17,7 +17,8 @@ myApp.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $
   .state('upgrade', {
     url: '/upgrade',
     templateUrl : 'app/upgrade/upgrade.tpl.html',
-   
+    controller: 'UpgradeController'
+
   });
 
   $urlRouterProvider.otherwise('/input');
