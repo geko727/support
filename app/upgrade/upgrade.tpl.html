@@ -1,7 +1,7 @@
 
 <h1> Upgrade </h1>
 	<div >
-		<table ng-show="showme" class="pure-table">
+		<table ng-hide="showme" class="pure-table">
 	      <tr>
 	        <th>Nombre</th>
 	        <th>Apellido</th>
@@ -23,10 +23,16 @@
 	        <td>{{ ticket.get('servicio') }}</td>
 	        <td>{{ ticket.get('problema') }}</td>
 	        <td>{{ ticket.get('texto') }}</td>
-	        <td><button ng-click="showme=false">comentar</button></td>
+	        <td><button class="pure-button" ng-click="showme = !showme">comentar</button></td>
 	        <td><button class="pure-button">cerrar</button></td>
 	      </tr>
 	    </table>
     </div>
 
-    <a ng-hide="showme" class="pure-button" ng-click="showme=true">comentar</td>
+    <div name="comment" ng-show="showme">
+    <fieldset>
+    <textarea rows="4" cols="50">Crea un comentario</textarea>
+    <button class="pure-button">comentar</button>
+	<button class="pure-button">cancelar</button>
+    </fieldset>
+    </div>
