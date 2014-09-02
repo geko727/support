@@ -21,14 +21,22 @@
       ];
 
 
-      $scope.saveTickets = function(){
+      $scope.saveTickets = function(textarea){
         Parse.initialize("6MOaLqbspioqwFGiWa7Zn7OXgfh7wa1lMYcji8mz", "5vY2KiRA8sW0FEKuaDvzDIeikDVX8lAKqAgiZwg1");
         var Ticket = Parse.Object.extend("Ticket");
         var ticket = new Ticket();
-   
-        ticket.set("nombre", ticket_params.nombre);
-        ticket.set("apellido", ticket.apellido);
-        ticket.set("email", ticket.email);
+        var desc = textarea;
+                
+        console.log($scope.seleccionServicio.name);
+        ticket.set("nombre", $scope.name);
+        ticket.set("apellido", $scope.apellido);
+        ticket.set("email", $scope.email);
+        ticket.set("celular", $scope.celular);
+        ticket.set("asunto", $scope.seleccionAsuntos.name);
+        ticket.set("servicio", $scope.seleccionServicio.name);
+        ticket.set("problema", $scope.seleccionProblema.name);
+        ticket.set("texto", desc);
+
    
         ticket.save(null, {
         success: function(ticket) {

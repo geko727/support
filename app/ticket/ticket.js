@@ -3,7 +3,7 @@ Parse.initialize("6MOaLqbspioqwFGiWa7Zn7OXgfh7wa1lMYcji8mz", "5vY2KiRA8sW0FEKuaD
 var Ticket = Parse.Object.extend("Ticket");
 var ticket = new Ticket();
  
-ticket.set("nombre", ticket.nombre);
+ticket.set("nombre", nombre);
 ticket.set("apellido", ticket.apellido);
 ticket.set("email", ticket.email);
  
